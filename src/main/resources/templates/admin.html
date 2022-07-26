@@ -163,13 +163,13 @@
                                    ng-change="filter(personList, 'pagedItemsPerson', 'currentPagePerson', personQuery, true)"/>
                         </div>
                         <div class="col-auto mr-auto col-lg-3 col-md-4 col-12 p-0">
-                            <form ng-submit="searchForUserGroupingInformation(); errorDismissed = false;">
+                            <form ng-submit="searchForUserGroupingInformation(); errorDismissed = false; clearForm()">
                                 <div class="input-group">
                                     <input name="Search Person" class="form-control" type="text" aria-required="true"
                                            title="Enter UH Username" aria-label="Enter UH Username to manage the person"
                                            placeholder="UH Username" ng-model="personToLookup"
                                            ng-init="errorDismissed = true; resetErrors()"
-                                           ng-blur="errorDismissed = true; resetErrors()"
+
                                     />
                                     <div class="input-group-append">
                                         <button class="btn btn-primary"
@@ -182,13 +182,14 @@
                             </form>
                         </div>
                         <div>
-                            <form ng-submit="removeFromGroups()">
+                            <form ng-submit="removeFromGroups(); clearForm()">
                                 <div th:replace="fragments/admin-error-messages :: admin-error-messages"></div>
                                 <div class="input-group">
                                     <div class="input-group-append check-remove">
                                         <label class="my-auto">Check All<input class="check-space" type="checkbox"
-                                                                               ng-click="updateCheckBoxes()"
-                                                                               ng-model="checkAll"></label>
+                                                                               ng-click="updateCheckBoxes(); checkVal()"
+                                                                               ng-model="checkAll">
+                                        </label>
                                         <button class="btn btn-danger pull-right"
                                                 ng-click="errorDismissed2 = false; resetErrors()"
                                                 ng-blur="errorDismissed2 = true; resetErrors()"

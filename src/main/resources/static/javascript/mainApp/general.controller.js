@@ -2013,6 +2013,23 @@
             $scope.inGrouper = false;
         };
 
+        $scope.clearForm = function () {
+            $('.check-space').prop('checked', false);
+            // $('#checkAllBox').attr('checked', false);
+            // $('#checkAllBox').get(0).checked = false;
+            // $('#checkAllBox')[0].checked = false;
+            // document.getElementById("checkAllBox").checked = false;
+            // document.getElementById("form1").reset();
+            $scope.checkAll = false;
+            $scope.checkVal();
+        }
+
+        // testing
+        $scope.checkVal = function () {
+            console.log('checked: ' + $('#checkAllBox').prop('checked'));
+            console.log('on document: '  + document.getElementById("checkAllBox").checked)
+        }
+
         /**
          * Create sync destination confirmation modal.
          * @param {String} syncDestName Name of the Sync Dest to create modal for
