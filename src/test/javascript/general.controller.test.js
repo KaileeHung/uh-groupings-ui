@@ -2186,6 +2186,23 @@ describe("GeneralController", () => {
         });
     });
 
+    // describe("clearCheckBoxes", () => {
+    //     beforeEach(() => {
+    //         scope.pagedItemsPerson[scope.currentPagePerson] = {
+    //             inBasis: false,
+    //             inExclude: false,
+    //             inInclude: true,
+    //             isSelected: false
+    //         };
+    //     });
+    //
+    //     it("should negate scope.checkAll", () => {
+    //         let checkAll = scope.checkAll;
+    //         scope.updateCheckBoxes();
+    //         expect(scope.checkAll).toEqual(false);
+    //     });
+    // });
+
     describe("cancelResetGroup", () => {
         beforeEach(() => {
             scope.displayResetGroupModal(scope.group);

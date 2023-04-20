@@ -1425,7 +1425,17 @@
             $scope.membersNotInList = "";
             $scope.multiRemoveResults = [];
             $scope.removeModalInstance.dismiss("cancel");
+            // $scope.clearCheckboxes();
         };
+
+        // $scope.clearCheckboxes = function () {
+        //     $scope.checkAll = false;
+        //     _.forEach($scope.pagedItemsPerson[$scope.currentPagePerson], function (grouping) {
+        //         if (grouping.inOwner || grouping.inInclude || grouping.inExclude) {
+        //             grouping.isSelected = $scope.checkAll;
+        //         }
+        //     });
+        // };
 
         /**
          * Remove a single member from include/exclude by using the "trashcan" UI implementation.
@@ -1577,6 +1587,7 @@
          * Close the remove error modal.
          */
         $scope.closeRemoveErrorModal = function () {
+            // $scope.clearCheckboxes();
             $scope.removeErrorModalInstance.close();
         };
 
